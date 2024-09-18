@@ -17,5 +17,32 @@ To get started with the project:
 1. **Clone the repository:**
 
    ```bash
-   git clone https://github.com/your-username/Book-Inventory-Manager.git
+   git clone https://github.com/Carlos2902/Book-Inventory-Manager-System.git
    cd Book-Inventory-Manager
+
+2. **Install Pipenv:**
+   Open your terminal, navigate to the project directory and install pipenv if you don't have i
+   ```bash
+   pip install pipenv
+
+3. **Install the dependencies:**
+   Use Pipenv to install all the required packages, including Django and Django REST Framework:
+   ```bash
+   pipenv install
+
+4. **Activate the virtual environment:**
+   ```bash
+   pipenv shell
+
+
+5. **Apply the migrations:**
+   To set up the database and create the necessary tables, run:
+   ```bash
+   python manage.py migrate
+
+5. **Create a superuser(optional):**
+   You will need an admin account to access the Django admin panel:
+   ```bash
+   python manage.py createsuperuser
+
+
