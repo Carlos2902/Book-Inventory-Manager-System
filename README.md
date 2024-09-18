@@ -123,7 +123,11 @@ The solution was to create custom Django admin actions that allow users to selec
 
 ### 2.Database Flexibility:
 Since the project was developed quickly, I initially used SQLite for ease of setup. However, I ensured that the system could easily migrate to other databases like MySQL or PostgreSQL by using Django’s ORM and abstracting the database logic from the application.
+
+
 <img width="419" alt="Screenshot 2024-09-17 at 22 31 39" src="https://github.com/user-attachments/assets/2df2f81d-7ee1-4e03-b082-09607673bf9f">
+
+
 
 ### Conclusion
 This Book Inventory Management System is built to be a flexible, secure, and scalable solution for managing books. Its modular architecture allows it to easily grow and adapt to various use cases, making it a solid foundation for future development.
