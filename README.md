@@ -18,7 +18,7 @@ To get started with the project:
 
    ```bash
    git clone https://github.com/Carlos2902/Book-Inventory-Manager-System.git
-   cd Book-Inventory-Manager
+   cd Book-Inventory-Manager-System
 
 2. **Install Pipenv:**
    Open your terminal, navigate to the project directory and install pipenv if you don't have i
