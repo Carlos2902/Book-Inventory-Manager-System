@@ -107,7 +107,9 @@ class Book(models.Model):
 This code shows how the different entities (`Book`, `Author`, `Genre`) are connected and how data flows between them.
 
 `Book`: Has a foreign key relationship with both Author and Genre.
+
 `Author`: Represents the author of a book.
+
 `Genre`: Represents the genre of a book.
 
 ## Challenges and Solutions
