@@ -54,6 +54,7 @@ To get started with the project:
    
 You can now access the application at `http://localhost:8000/admin/`
 
+<img width="1440" alt="Screenshot 2024-09-17 at 22 16 12" src="https://github.com/user-attachments/assets/33a6c7c2-ddf9-4006-b971-9ecf6d40eeca">
 
 
 
@@ -74,9 +75,55 @@ For this rapid development project, I used **SQLite** due to its simplicity and 
 The project uses Django's powerful model system to define the database schema. This approach offers several advantages over raw SQL queries:
 - **Abstraction**: Models abstract away the complexities of SQL queries, allowing for a more intuitive interaction with the database.
 - **Maintainability**: Django models simplify code maintenance and updates by providing a clear and organized way to manage database interactions.
-- **Security**: Django’s ORM protects against SQL injection attacks by using parameterized queries.
+- **Security**: Django’s Object Relational Mapping protects against SQL injection attacks by using parameterized queries.
 
-A relationship diagram is provided to illustrate the relationships between the models in the system. This diagram shows how the different entities (e.g., `Book`, `Author`, `Genre`) are connected and how data flows between them.
+The code for the models is as follows:
+```python
+from django.db import models
+
+class Author(models.Model):
+    name = models.CharField(max_length=100)
+    
+    def __str__(self):
+        return self.name
+
+class Genre(models.Model):
+    name = models.CharField(max_length=100)
+    
+    def __str__(self):
+        return self.name
+
+class Book(models.Model):
+    title = models.CharField(max_length=200)
+    author = models.ForeignKey(Author, on_delete=models.CASCADE)
+    genre = models.ForeignKey(Genre, on_delete=models.CASCADE)
+    publication_date = models.DateField()
+    isbn = models.CharField(max_length=13, unique=True)
+    
+    def __str__(self):
+        return self.title
+
+```
+This code shows how the different entities (`Book`, `Author`, `Genre`) are connected and how data flows between them.
+
+`Book`: Has a foreign key relationship with both Author and Genre.
+`Author`: Represents the author of a book.
+`Genre`: Represents the genre of a book.
+
+## Challenges and Solutions
+
+During development, I encountered several challenges:
+
+### 1.Exporting Data in Different Formats:
+One challenge was implementing the functionality to export book data in both CSV and JSON formats. 
+The solution was to create custom Django admin actions that allow users to select books and download them in the desired format.
+
+<img width="1107" alt="Screenshot 2024-09-17 at 22 28 53" src="https://github.com/user-attachments/assets/59847269-3f74-48bc-9d59-eabf7a9986e0">
 
 
-   
+### 2.Database Flexibility:
+Since the project was developed quickly, I initially used SQLite for ease of setup. However, I ensured that the system could easily migrate to other databases like MySQL or PostgreSQL by using Django’s ORM and abstracting the database logic from the application.
+<img width="419" alt="Screenshot 2024-09-17 at 22 31 39" src="https://github.com/user-attachments/assets/2df2f81d-7ee1-4e03-b082-09607673bf9f">
+
+### Conclusion
+This Book Inventory Management System is built to be a flexible, secure, and scalable solution for managing books. Its modular architecture allows it to easily grow and adapt to various use cases, making it a solid foundation for future development.
