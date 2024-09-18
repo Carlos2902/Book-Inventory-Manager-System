@@ -21,7 +21,7 @@ To get started with the project:
    cd Book-Inventory-Manager-System
 
 2. **Install Pipenv:**
-   Open your terminal, navigate to the project directory and install pipenv if you don't have i
+   Open your terminal, navigate to the project directory and install pipenv if you don't have it
    ```bash
    pip install pipenv
 
