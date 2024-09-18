@@ -51,7 +51,7 @@ To get started with the project:
    ```bash
    python manage.py runserver
    
-You can now access the application at [Link Text](http://127.0.0.1:8000/admin)
+You can now access the application at `http://localhost:8000/admin/`
 
 
 
