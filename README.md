@@ -34,15 +34,25 @@ To get started with the project:
    ```bash
    pipenv shell
 
-
 5. **Apply the migrations:**
    To set up the database and create the necessary tables, run:
    ```bash
    python manage.py migrate
-
-5. **Create a superuser(optional):**
-   You will need an admin account to access the Django admin panel:
+   
+6. **Create a superuser(optional):**
+   You will need an admin account to access the Django admin panel. You can either create a new admin account or use the following credentials:  
+   **Username**: `admin`  
+   **Password**: `123`
    ```bash
    python manage.py createsuperuser
 
+7. **Run the server:**
+   Start the Django development server:
+   ```bash
+   python manage.py runserver
+   
+You can now access the application at [Link Text](http://127.0.0.1:8000/admin)
 
+
+
+   
